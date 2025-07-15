@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>hihifun</Authors>
+    <Description>1、添加windows服务
+ShareService.AddWinService()  注意：必须集成TimerService或者实现IWindowService接口，必须实现ILogService
+使用方式：
+
+IServiceProvider.RunWinService(new ServiceInfo
+{
+    Name = client?.Name,
+    DisplayName = client?.Name,
+    Description = client?.Description
+}));
+2、添加Log4net
+ShareService.ConfigureLog4net();
+
+LogService中获取Log:
+log = log4net.LogManager.GetLogger("loginfo");
+logError = log4net.LogManager.GetLogger("logerror");
+
+</Description>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
+    <PackageReference Include="XT.Common" Version="1.1.9" />
+  </ItemGroup>
+
+</Project>
