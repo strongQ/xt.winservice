@@ -23,7 +23,7 @@ log = log4net.LogManager.GetLogger("loginfo");
 logError = log4net.LogManager.GetLogger("logerror");
 
 </Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,7 +37,7 @@ logError = log4net.LogManager.GetLogger("logerror");
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="log4net" Version="3.6.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageReference Include="Topshelf" Version="4.3.0" />
     <PackageReference Include="XT.Common" Version="1.1.9" />
